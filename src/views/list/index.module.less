@@ -1,0 +1,92 @@
+.list {
+  width: 100%;
+  height: 100%;
+  // padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  .search {
+    // position: fixed;
+    // top: 0;
+    // left: 0;
+    flex-shrink: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-bottom: 1px solid #fefefe;
+    // margin-bottom: 10px;
+    input {
+      padding-left: 8px;
+      margin-left: 10px;
+      height: 28px;
+      width: 180px;
+    }
+  }
+  .list_content {
+    overflow-y: auto;
+    flex-grow: 1;
+    box-sizing: border-box;
+    // padding-top: 80px;
+    // height: 100%;
+    padding: 0 10px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    // grid-template-columns: 1fr 1fr 3fr;
+    grid-gap: 10px;
+    .list_item {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      height: 300px;
+      border-radius: 6px;
+      // background-color: #ccc;
+      box-shadow: inset 0px 0px 10px #edeaea;
+
+      position: relative;
+
+      // &::after {
+      //   transition: all 0.6s;
+      //   content: '';
+      //   position: absolute;
+      //   left: 0;
+      //   top: -300px;
+      //   width: 100%;
+      //   height: 100%;
+      //   background-color: rgba(0, 0, 0, 0.1);
+      // }
+      &:hover {
+        .hove_name {
+          bottom: 0;
+        }
+        // &::after {
+        //   top: 0px;
+        // }
+      }
+      .hove_name {
+        border-radius: 8px 8px 0 0;
+        cursor: pointer;
+        z-index: 10;
+        transition: all 0.8s;
+        width: 100%;
+        height: 60px;
+        line-height: 60px;
+        font-size: 16px;
+        position: absolute;
+        // bottom: 0px;
+        bottom: -60px;
+        left: 0;
+        text-align: center;
+        background-color: #f7f7f7;
+      }
+    }
+  }
+  @media screen and (max-width: 1024px) {
+    .list_content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
